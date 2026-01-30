@@ -74,7 +74,6 @@ public class SecurityConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         config.setAllowedOrigins(List.of(
-                "http://localhost:4200",
                 "https://sip-ninja-fr.vercel.app"
         ));
 
