@@ -75,7 +75,7 @@ public class SecurityConfig {
 
         config.setAllowedOrigins(List.of(
                 "http://localhost:4200",
-                "https://your-angular-app.netlify.app"
+                "https://sip-ninja-fr.vercel.app"
         ));
 
         config.setAllowedMethods(List.of(
