@@ -38,7 +38,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/login",
                                 "/api/employees/images/**" ,
-                                "/api/employees/profile_image/**").permitAll()
+                                "/api/employees/profile_image/**",
+                                    "/hello").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
